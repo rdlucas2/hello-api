@@ -14,9 +14,9 @@ permissions:
 jobs:
   golden:
     # Pin both the workflow and the CLI to the same rlp commit.
-    uses: rdlucas2/rlp/.github/workflows/golden.yml@16ac06930c31e2e42fbf5e8454046a8a8da0ea4a
+    uses: rdlucas2/rlp/.github/workflows/golden.yml@dff6dbf9fd51cc378cd205894e6ad08d936b3b4a
     with:
-      rlp-version: "git:16ac06930c31e2e42fbf5e8454046a8a8da0ea4a"
+      rlp-version: "git:dff6dbf9fd51cc378cd205894e6ad08d936b3b4a"
       deploy-env: dev
       aws-region: ${{ vars.RLP_AWS_REGION }}
       aws-plan-role-arn: ${{ vars.RLP_AWS_PLAN_ROLE_ARN }}
