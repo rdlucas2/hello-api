@@ -22,6 +22,8 @@ jobs:
       aws-plan-role-arn: ${{ vars.RLP_AWS_PLAN_ROLE_ARN }}
       aws-deploy-role-arn: ${{ vars.RLP_AWS_DEPLOY_ROLE_ARN }}
       tf-state-bucket: ${{ vars.RLP_TF_STATE_BUCKET }}
+    secrets:
+      infracost-api-key: ${{ secrets.INFRACOST_API_KEY }}
     permissions:
       id-token: write
       contents: write          # publish: attach zips and jars to GitHub Releases
