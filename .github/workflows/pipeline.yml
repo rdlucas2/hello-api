@@ -17,7 +17,13 @@ jobs:
     uses: rdlucas2/rlp/.github/workflows/golden.yml@0a52b6cd26815b5682e8502b8333000db7a52a5d
     with:
       rlp-version: "git:0a52b6cd26815b5682e8502b8333000db7a52a5d"
+      deploy-env: dev
+      aws-region: ${{ vars.RLP_AWS_REGION }}
+      aws-plan-role-arn: ${{ vars.RLP_AWS_PLAN_ROLE_ARN }}
+      aws-deploy-role-arn: ${{ vars.RLP_AWS_DEPLOY_ROLE_ARN }}
+      tf-state-bucket: ${{ vars.RLP_TF_STATE_BUCKET }}      
     permissions:
+      id-token: write
       contents: write          # publish: attach zips and jars to GitHub Releases
       packages: write          # publish: push images to GHCR
       security-events: write   # gates: upload SARIF to code scanning
