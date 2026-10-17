@@ -35,13 +35,6 @@ components:
       - name: LOG_LEVEL
         description: Log level for the JSON logger (debug, info, warning, error, critical).
         default: info
-      - name: DATABASE_URL
-        description: Connection string for the sample Postgres service; /readyz checks it is reachable when set.
-        from: service:db
-    services:
-      - name: db
-        kind: postgres
-        version: "17"
     telemetry:
       enabled: true
       serviceName: hello-api-api
